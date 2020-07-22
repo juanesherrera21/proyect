@@ -9,7 +9,7 @@ body{
 
 	color: white;
 	font-family: 'calibri';
-	background-image: url(C:/Users/juane/Desktop/new/proyect/img/thumb-1920-750482.png);
+	background-image: url('../img/thumb-1920-750482.png');
 }
 
 header{
