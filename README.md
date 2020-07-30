@@ -1,16 +1,17 @@
 # Micrositio
 
-Descripcion .....
+Esta es una pagina web con una seccion de galerias para mostrar diferentes articulos.
 
 # Autor
-juan esteban herrera
+juan esteban herrera - [ perfil ](https://github.com/juanesherrera21)
 
 # Secciones
 * login
 * Registro
 * Contenido
-* Galeri (producto)
+* Galeria (producto)
 * Contacto
 
 # Wireframe
-En esta [seccion]se encuentran los wireframe de las diferentes  secci  del repositorio
+En esta seccion( [Dale click aqui](https://github.com/juanesherrera21/proyect/tree/master/wireframes) ) se encuentran los wireframes de las secciones del proyecto web
+
