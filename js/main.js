@@ -1,7 +1,3 @@
-let password, confirm_password;
-let titles = [];
-titles["nombres"] = "Por favor tener encuenta : \n*El campo no puede estar vacio \n*longitud maxima de 15 caracteres \n*no se permiten numeros";
-titles["apellidos"]="Por favor tener encuenta :&#10;*El campo no puede estar vacio&#10;*longitud maxima de 15 caracteres&#10;*no se permiten numeros";
 
 window.onload = ()=>{
 	password = document.getElementById("password");
@@ -14,15 +10,14 @@ window.onload = ()=>{
 }
 
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("las contraseñas no son iguales");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
+$(document).ready(function() {
+  $('body').addClass('js');
+  var $menu = $('#menu'),
+    $menulink = $('.menu-link');
+  
+$menulink.click(function() {
+  $menulink.toggleClass('active');
+  $menu.toggleClass('active');
+  return false;
+});});
 
-function setFormTitles(){
-	nombres.title = titles["nombres"];
-	apellidos.title = titles["apellidos"];
-}
