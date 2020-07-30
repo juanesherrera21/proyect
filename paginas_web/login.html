@@ -2,34 +2,28 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
-	<link rel="stylesheet" href="../css/main.css">
+	<title>Login
+	</title>
+
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 <body>
 
-		<!--Pattern HTML-->
-  <div id="pattern" class="pattern">
-    <!--Begin Pattern HTML-->
-    <a href="#menu" class="menu-link">Menu</a>
-    <nav id="menu" role="navigation">
-      <ul>
-        <li><a href="..\index.html">Contenido</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Iniciar sesion</a></li>
-        <li><a href="register.html">Registrarse</a></li>
-      </ul>
-    </nav>
-  </div>
-  <!--End Pattern HTML-->
-  
+	<form  class="form" id="form">
+		<h1 class="h3 mb-3 font-weight-bold">Login</h1>
+		<input class="form-control" type="text" id="username"  placeholder="Usuario" required >
+		
+		
+			<input class="form-control" type="password" id="password"  placeholder="Contraseña" required>
+		
+			<button type="submit" class="btn btn-outline-success">Iniciar</button><br>
 
-	<section class="login">
-		<h1>Login</h1>
-		<input class="controls" type="text" name="usuario" value="" placeholder="Usuario" required>
-		<input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña" required>
-		<input class="buttons" type="submit" name="" value="Ingresar">
-		<a  href="..\index.html">¿Regresar al inicio?</a>
-	</section>
+		
+				<a  href="..\index.html">¿Regresar al inicio?</a>
+	</form>
+	<script src="../js/main.js"></script>
+	
 </body>
 </html>
