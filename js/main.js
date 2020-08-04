@@ -4,8 +4,7 @@ const form=document.getElementById('form');
 
 form.addEventListener('submit',function(event){
   event.preventDefault();
-  console.log('click');
- location.href = '../paginas_web/inicio.html';
+  Verificar();
 
 });
 
@@ -152,17 +151,20 @@ function Verificar(){
         var temporal = ListaUsuarios.length;
         for(var i=0; i<temporal;i++){
              if(userName.value == ListaUsuarios[i].usuario && userPw.value == ListaUsuarios[i].contraseña){
-               variable=-1;
+               variable=1;
                location.href = '../paginas_web/inicio.html';
 
                 break;
+            }else{
+              variable=-1
             }
+
         }
-        if(variable==1){
-              alert('Error en el login');
+        if(variable==-1){
+              alert('Usuario no registrado');
               return false;
-        }else if(variable = -1){
-          //alert('Has iniciado sesion');
+        }else if(variable = 1){
+          alert('Has iniciado sesion');
           return true;
         }
     }else{
