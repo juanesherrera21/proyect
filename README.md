@@ -1,6 +1,7 @@
 # Micrositio
 
-Esta es una pagina web con una seccion de galerias para mostrar diferentes articulos.
+Esta es una pagina web con una seccion de galerias para mostrar diferentes articulos y lleva a cabo el almaceanamiento del usuario y contraseña de un usuario en el
+local storage.
 
 # Autor
 juan esteban herrera - [ perfil ](https://github.com/juanesherrera21)
