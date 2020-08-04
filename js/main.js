@@ -171,4 +171,5 @@ function Verificar(){
         return false;
         alert('Error: No hay entradas en el local storage');
     }
+    bandera=true;
 }
