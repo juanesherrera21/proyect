@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/main.js"></script>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+            <title>
+            </title>
+            <link href="../css/main.css" rel="stylesheet">
+            </link>
+        </meta>
+    </head>
+    <body>
+        <form action="" id="datos" method="post">
+            <section class="form-register">
+                <h4>
+                    Formulario Registro
+                </h4>
+                <input class="controls" id="nombres" name="nombres" pattern="[A-z]{1,15}" placeholder="Ingrese su Nombre" required="" title="Por favor tener encuenta :
+*El campo no puede estar vacio
+*longitud maxima de 15 caracteres
+*no se permiten numeros" type="text"></input>
+                    <input class="controls" id="apellidos" name="apellidos" pattern="[A-z]{1,15}" placeholder="Ingrese su Apellido" required="" title="Por favor tener encuenta :
+*El campo no puede estar vacio
+*longitud maxima de 15 caracteres
+*no se permiten numeros." type="text"></input>
+                        <label for="">
+                            Departamento
+                        </label>
+                        <select class="custom-select" data-width="100px" id="departamento" name="departamento" onchange="cargarDepartamentos();">
+                            <option value="">
+                                Seleccione un departamento
+                            </option>
+                        </select>
+                        <label for="">
+                            Ciudad
+                        </label>
+                        <select class="custom-select" id="ciudad" name="ciudad">
+                            <option value="">
+                                Seleccione una ciudad
+                            </option>
+                        </select>
+                        <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" required >
+                        </input>
+                            <input class="controls" id="username" name="username" pattern="{1,15}" placeholder="Nombre de usuario" type="text" required></input>
+                                <input class="controls" id="password" placeholder="Password" required="" type="password"></input>
+                                    <button class="controls" type="submit">
+                                        Registrar
+                                    </button>
+                                    <br>
+                                        <a href="login.html">
+                                            ¿Ya tengo Cuenta?
+                                        </a>
+                                    </br>
+                                   </section>
+                            </form>
+                            <script src="../js/main.js">
+                            </script>
 
-    <form action="" method="post"> 
-        <section class="form-register">
-            <h4>Formulario Registro</h4>
-            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre"   title="Por favor tener encuenta :&#10;*El campo no puede estar vacio&#10;*longitud maxima de 15 caracteres&#10;*no se permiten numeros" required pattern="[A-z]{1,15}">
-            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido" required pattern="[A-z]{1,15}"  title="Por favor tener encuenta :&#10;*El campo no puede estar vacio&#10;*longitud maxima de 15 caracteres&#10;*no se permiten numeros.">
-            
-                    <label for="">Departamento</label>
-                    <select class="custom-select" data-width="100px" name="departamento" id="departamento" onchange="cargarDepartamentos();" required>
-                        <option value="">Seleccione un departamento</option>
-                    </select>
-                    <br>
-                </div>
-                <div class="col-sm-6">
-                    <label for="">Ciudad</label>
-                    <select class="custom-select" name="ciudad" id="ciudad" required>
-                        <option value="">Seleccione una ciudad</option>
-                    </select>
+                           </body>
+                    </html>
+                       
+                        
 
-
-
-            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" type="url" required title="Por favor tener encuenta :&#10;*El campo no puede estar vacio&#10;*longitud maxima de 15 caracteres&#10;*no se permiten numeros.">
-            <input class="controls" type="text" name="username" id ="username"placeholder="Nombre de usuario" pattern="[a-z]{1,15}" required titles="Por favor tener encuenta : \n*El campo no puede estar vacio \n*longitud maxima de 15 caracteres \n*no se permiten numeros">
-            <input type="password" class="controls" placeholder="Password" id="password"  required>
-            
-            <button type="submit"  class="controls">Registrar</button><br>
-            <a href="login.html">¿Ya tengo Cuenta?</a>
-        </section>
-    </form>
-</body>
-</html>

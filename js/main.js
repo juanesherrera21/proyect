@@ -1,3 +1,16 @@
+
+function cargarlogin() {
+const form=document.getElementById('form');
+
+form.addEventListener('submit',function(event){
+  event.preventDefault();
+  console.log('click');
+ location.href = '../paginas_web/inicio.html';
+
+});
+
+}
+
 var array = [ "Amazonas", "Antioquia", "Boyaca", "Choco", "Cundinamarca", "Meta", "Santander", "Arauca", "Atlantico", "Bogota", "Bolivar", "Caldas", "Caqueta", "Casanare", "Cauca", "Cesar", "Cordoba", "Guainia", "Guaviare", "Huila", "Guajira", "Magdalena", "Narino", "NorteSantander", "Putumayo", "Quindio", "Risaralda", "SanAndresProvidencia", "Sucre", "Tolima", "ValleCauca", "Vaupes", "Vichada"];
 var listaCiudades = {
   meta: ["Acac\u00edas", "Barranca de Up\u00eda", "Cabuyaro", "Castilla la Nueva", "Cubarral", "Cumaral", "El Calvario", "El Castillo", "El Dorado", "Fuente de Oro", "Granada", "Guamal", "La Macarena", "La Uribe", "Lejan\u00edas", "Mapirip\u00e1n", "Mesetas", "Puerto Concordia", "Puerto Gait\u00e1n", "Puerto Lleras", "Puerto L\u00f3pez", "Puerto Rico", "Restrepo", "San Carlos de Guaroa", "San Juan de Arama", "San Juanito", "San Mart\u00edn", "Villavicencio", "Vista Hermosa"],
@@ -71,33 +84,89 @@ function cargarCiudades() {
     }
     
   }
-window.onload = cargarDepartamentos;
-
-
-
-
-
-
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
-
-form.addEventListener('submit',function(event){
+window.onload = ()=>{
+usuario = document.getElementById("username");
+contraseña = document.getElementById("password");
+userName = document.getElementById("nombreu");
+userPw = document.getElementById("contrasenau");
+cargarDepartamentos();
+cargarregistro();
+}
+cargarlogin();
+function cargarregistro(){
+const datos=document.getElementById('datos');
+datos.addEventListener('submit',function(event){
 event.preventDefault();
-let users = Array(
-{
-usuario: username.value,
-contraseña:password.value
+GuardarLocalStorage();
+location.href='../index.html';
+});
+
 
 }
-);
-localStorage.setItem('user',JSON.stringify(users));
-location.href='../paginas_web/inicio.html';
-});
-close.addEventListener('click',function(){
-  localStorage.clear('user');
-  location.href='../paginas_web/index.html';
 
-});
+function GuardarLocalStorage(){
 
+  control = true;
+    let ListaUsuarios = JSON.parse(localStorage.getItem("lista"));
+  
+  if(ListaUsuarios!=null){
+    //validar usario unico
+    var temporal = ListaUsuarios.length;
+    for(var i=0; i<temporal;i++){
+          if(usuario.value == ListaUsuarios[i].usuario){
+              alert('El usuario ' + usuario.value +' ya existe');
+              control = false;
+              break;
+              }
+        }
 
+    }
+
+     if (control!=false){
+      let persona = {
+          usuario: usuario.value,
+          contraseña: contraseña.value,
+        };
+
+        oldInfo = JSON.parse(localStorage.getItem("lista"));
+
+      if(!(oldInfo instanceof Array)){
+          oldInfo = []; 
+          oldInfo.push(persona); 
+          localStorage.setItem("lista", JSON.stringify(oldInfo));
+      }else{
+          oldInfo.push(persona); 
+          localStorage.setItem("lista", JSON.stringify(oldInfo));
+      }
+      document.forms[0].reset(); // limpliar el formulario
+      
+    } 
+}
+
+function Verificar(){
+    if(localStorage.getItem("lista")){
+        //existe lista en le local storage
+        var variable = 1;
+ 
+        let ListaUsuarios = JSON.parse(localStorage.getItem("lista"));
+        var temporal = ListaUsuarios.length;
+        for(var i=0; i<temporal;i++){
+             if(userName.value == ListaUsuarios[i].usuario && userPw.value == ListaUsuarios[i].contraseña){
+               variable=-1;
+               location.href = '../paginas_web/inicio.html';
+
+                break;
+            }
+        }
+        if(variable==1){
+              alert('Error en el login');
+              return false;
+        }else if(variable = -1){
+          //alert('Has iniciado sesion');
+          return true;
+        }
+    }else{
+        return false;
+        alert('Error: No hay entradas en el local storage');
+    }
+}
